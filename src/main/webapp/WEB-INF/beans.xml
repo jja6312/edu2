@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans>
+    <bean class="web.controller.member.LoginController" id="login" />
+    <bean class="web.controller.member.MemberInsertController" id="memberInsert" />
+    <bean class="web.controller.member.MemberUpdateController" id="memberUpdate" />
+    <bean class="web.controller.member.MemberDeleteController" id="memberDelete" />
+</beans>

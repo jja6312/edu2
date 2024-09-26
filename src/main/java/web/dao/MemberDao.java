@@ -38,6 +38,8 @@ public class MemberDao {
             if(rs.next()){
                 String name = rs.getString("name");
                 return new Member(name);
+            }else{
+                throw new MyException("아이디 또는 비밀번호가 잘못되었습니다");
             }
 
 
@@ -45,8 +47,6 @@ public class MemberDao {
         } catch (Exception e) {
             throw new MyException("로그인 오류");
         }
-
-        return null;
 
     }
 }

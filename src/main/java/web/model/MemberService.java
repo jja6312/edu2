@@ -5,10 +5,21 @@ import web.entity.Member;
 import web.exception.MyException;
 
 public class MemberService {
+    static MemberService instance;
     MemberDao memberDao;
 
-    public MemberService() throws MyException {
+
+
+    private MemberService() throws MyException {
         memberDao = new MemberDao();
+    }
+
+    public static MemberService getInstance() throws MyException {
+        if(instance==null) {
+            return instance = new MemberService();
+        }else{
+            return instance;
+        }
     }
 
     public Member login(String id, String pw) throws MyException {
